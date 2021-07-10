@@ -1,0 +1,43 @@
+.nav-link {
+  font-family: "Quantico", sans-serif;
+}
+.navbar-brand {
+  font-family: "Quantico", sans-serif;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  background-image: url(img/jumbotron.jpg);
+  background-size: cover;
+  height: 640px;
+}
+.jumbotron .display-4 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 150px;
+}
+/* VERSI DEKSTOP */
+@media (min-width: 992px) {
+  .navbar-brand,
+  .nav-link {
+    color: white !important;
+    text-shadow: 1px 1px 1px #f8da3c;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    margin-right: 30px;
+  }
+  .nav-link:hover::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid #f8da3c;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  }
+  .jumbotron {
+    margin-top: -75px;
+  }
+}
