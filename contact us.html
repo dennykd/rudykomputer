@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Teko:wght@300&display=swap" rel="stylesheet" />
+  </head>
+  <body class="about">
+    <!-- HERO START -->
+    <div class="hero-about">
+      <div class="hero-container">
+        <nav>
+          <img src="img/logo new.png" alt="LOGO" />
+          <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="gaming.html">Gaming</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="contact us.html">Contact Us</a>
+          </div>
+          <div class="nav-toggle">
+            <input type="checkbox" />
+            <div><span></span><span></span><span></span></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- HERO END -->
+    <!-- CONTENT START -->
+    <div class="content">
+      <h1 class="content-title">CONTACT US</h1>
+      <div class="content-sosmed">
+        <a href="https://bit.ly/3zt1hVx" target="_blank"><img src="about/whatsapp.png" alt="" /></a>
+        <a href="" target="_blank"><img src="about/email.png" alt="" /></a>
+        <a href="https://www.instagram.com/rudykomputer/" target="_blank"><img src="about/instagram.png" alt="" /></a>
+        <a href="https://www.facebook.com/rudykomputer/" target="_blank"><img src="about/facebook-logo.png" alt="" /></a>
+      </div>
+    </div>
+    <!-- CONTENT END -->
+    <!-- CONTACT START -->
+    <div class="contact">
+      <div class="container">
+        <div class="row text-center mb-3"></div>
+        <div class="row justify-content-center" data-aos="zoom-in">
+          <div class="col-6">
+            <div class="alert alert-dismissible fade show d-none my-alert" role="alert">
+              <p><strong>Berhasil!</strong> Pesan anda sudah terkirim.</p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="portfolio-contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
+              </div>
+              <button type="submit" class="kirim btn-kirim">Kirim</button>
+              <button class="kirim btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT END -->
+    <!-- FOOTER START -->
+    <div class="footer-page">
+      <div class="footer-container">
+        <div class="footer-text">
+          <strong>All rights reserved. Developed by <a href="https://www.instagram.com/dennykd_/" target="_blank">Dennykd</a></strong>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER END -->
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      const btnToggle = document.querySelector(".nav-toggle");
+      const navItems = document.querySelector(".nav-items");
+      btnToggle.addEventListener("click", function () {
+        navItems.classList.toggle("nav-restore");
+        console.log("ok");
+      });
+    </script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyEV0YEaRZ17M2R_QnTB4b_9fKCWHH8p7QEma0B_p13JQgqdKscPcUUV6UpSEJCq5f5/exec";
+      const form = document.forms["portfolio-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol loading, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            console.log("Success!", response);
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+            // resert form
+            form.reset();
+            console.log("success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <!-- Akhir Javascript -->
+  </body>
+</html>

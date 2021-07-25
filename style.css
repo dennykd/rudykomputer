@@ -1,43 +1,437 @@
-.nav-link {
-  font-family: "Quantico", sans-serif;
+/* HOME START */
+.home {
+  padding: 0;
+  margin: 0;
+  background-color: #f8da3c;
 }
-.navbar-brand {
-  font-family: "Quantico", sans-serif;
+/* NAVBAR START */
+nav {
+  display: grid;
+  justify-content: space-evenly;
+  width: 100%;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  position: relative;
+  margin-top: -2px;
+  background-color: black;
+  height: 80px;
+}
+nav > img {
+  margin-left: 50px;
+}
+.nav-items {
+  width: 80%;
+  margin-left: auto;
+  text-align: right;
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  justify-content: right;
+  margin-right: 50px;
+  padding-top: 10px;
+  font-family: "Cairo", sans-serif;
+  transition: 0.5s;
+  margin-bottom: 10px;
+}
+.nav-items > a:hover {
+  color: white !important;
+  transform: scale(1.1);
+}
+.nav-items > a:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #f8da3c;
+  width: 40%;
+  margin: auto;
+  padding-bottom: 2px;
+  margin-bottom: -4px;
 }
 
-/* JUMBOTRON */
-.jumbotron {
-  background-image: url(img/jumbotron.jpg);
-  background-size: cover;
-  height: 640px;
+a {
+  color: White;
+  text-decoration: none;
+  text-align: center;
 }
-.jumbotron .display-4 {
+.nav-toggle {
+  position: absolute;
+  right: 40px;
+  display: none;
+}
+.nav-toggle > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  opacity: 0;
+}
+.nav-toggle > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav-toggle > div > span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: all 0.5s;
+}
+.nav-toggle > div > span:first-child {
+  transform-origin: 0 0;
+}
+.nav-toggle > div > span:last-child {
+  transform-origin: 0 100%;
+}
+.nav-toggle > input:checked + div > span:first-child {
+  transform: rotate(45deg) translate(1px, 4px);
+}
+.nav-toggle > input:checked + div > span:last-child {
+  transform: rotate(-45deg) translate(-5px, 0px);
+}
+.nav-toggle > input:checked + div > span:nth-child(2) {
+  transform: scale(0);
+}
+.nav-toggle > input:checked + div > span {
+  background-color: white;
+}
+/* NAVBAR END */
+
+/* HERO START */
+.hero {
+  background-image: url(./img/jumbotron.jpg);
   color: white;
   text-align: center;
-  font-weight: bold;
-  padding-top: 150px;
+  height: 952px;
+  padding-top: 2px;
 }
-/* VERSI DEKSTOP */
-@media (min-width: 992px) {
-  .navbar-brand,
-  .nav-link {
-    color: white !important;
-    text-shadow: 1px 1px 1px #f8da3c;
+
+.hero > .hero-container > h1 {
+  font-size: 70px;
+  font-family: "Teko", sans-serif;
+  margin-top: 125px;
+  margin-bottom: 30px;
+}
+.hero > .hero-container > p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-family: "Cairo", sans-serif;
+}
+.hero > .hero-container > .hero-more {
+  font-family: "Cairo", sans-serif;
+  background-color: #f8da3c;
+  color: black;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+.hero > .hero-container > .hero-more:hover {
+  color: #f8da3c;
+  background-color: black;
+}
+.hero > .hero-container {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  height: 952px;
+}
+/* HERO END */
+
+/* WAVE START */
+.box {
+  background-color: black;
+  width: 100%;
+  height: 200px;
+}
+/* WAVE END */
+
+/* CAROUSEL START */
+.d-block {
+  margin: 0 auto;
+}
+.judul {
+  font-size: 30px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.judul:hover {
+  color: white;
+  text-shadow: 1px 1px 6px #000000;
+  transform: scale(1.1);
+}
+.isi {
+  color: black;
+  font-size: 20px;
+}
+/* CAROUSEL END */
+
+/* STORE START */
+.store {
+  width: 100%;
+  text-align: center;
+}
+.store > p {
+  color: black;
+}
+.store > .store-img {
+  font-weight: bolder;
+  color: black !important;
+  margin-top: -50px;
+}
+.store > .icon {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.store > .barcode {
+  padding-bottom: 20px;
+}
+
+/* STORE END */
+
+/* FOOTER START */
+.footer-container {
+  background-color: black;
+}
+.footer-sosmed,
+.footer-text {
+  text-align: center;
+}
+.footer-sosmed {
+  padding-top: 30px;
+  margin-top: 100px;
+}
+.footer-sosmed > a {
+  margin: auto;
+  display: inline-block;
+  margin-right: 5px;
+  transform: scale(0.5);
+}
+
+.footer-text {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.footer-text > strong > a:hover {
+  color: #f8da3c !important;
+}
+/* FOOTER END */
+/* HOME END */
+
+/* ABOUT US START */
+.about {
+  margin: 0;
+  padding: 0;
+}
+.hero-about {
+  padding-top: 2px;
+}
+.content {
+  background-color: #f8da3c;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.content > .content-title {
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  font-family: "Teko", sans-serif;
+  margin-bottom: -10px;
+}
+.content-sosmed > a {
+  margin-right: 5px;
+  display: inline-block;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  transform: scale(0.7);
+}
+.content-sosmed > a:hover:first-child {
+  background-color: #25d366;
+}
+.content-sosmed > a:hover:nth-child(2) {
+  background-color: #f84437;
+}
+.content-sosmed > a:hover:nth-child(3) {
+  background-color: #da3d82;
+}
+.content-sosmed > a:hover:last-child {
+  background-color: #3b5998;
+}
+.content-sosmed > a > img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+center {
+  margin: 0 50px;
+  margin-top: 30px;
+}
+center > a {
+  color: black;
+  background-color: #f8da3c;
+  border-radius: 70px;
+  padding: 5px;
+  font-weight: bold;
+}
+center > a:hover {
+  color: #f8da3c;
+  background-color: black;
+}
+.shop {
+  margin-top: 15px;
+}
+.footer-page {
+  margin-top: 30px;
+}
+/* ABOUT US END */
+
+/* GAMING START */
+.catalog {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /* grid-template-rows: 1fr 1fr; */
+  gap: 5px;
+}
+.list > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.list > p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8da3c;
+  font-family: "Teko", sans-serif;
+}
+/* GAMING END */
+/* ACCESSORIES START */
+.catalog-acces {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+}
+.list-acces > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.list-acces > p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8da3c;
+  font-family: "Teko", sans-serif;
+}
+/* ACCESSORIES END */
+/* CONTACT START */
+.contact {
+  margin: 0 130px;
+}
+.contact > .container {
+  background-color: #ddd;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.kirim {
+  color: black;
+  background-color: #f8da3c;
+  border: none;
+  border-radius: 50px;
+}
+.alert {
+  background-color: #f8da3c;
+  height: 60px;
+}
+.alert > p {
+  color: black;
+}
+/* CONTACT END */
+/* WEBCAM START */
+.catalog-webcam {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 5px;
+}
+.list-webcam > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.list-webcam > p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8da3c;
+  font-family: "Teko", sans-serif;
+}
+/* WEBCAM END */
+/* TESTI START */
+.catalog-testi {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+}
+.list-testi > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.list-testi > p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8da3c;
+  font-family: "Teko", sans-serif;
+}
+/* TESTI END */
+
+@media (max-width: 576px) {
+  nav {
+    grid-template-columns: 1fr;
   }
-  .nav-link {
-    text-transform: uppercase;
-    margin-right: 30px;
+  .nav-items {
+    padding-top: 30px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: 0.3s;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    box-sizing: border-box;
   }
-  .nav-link:hover::after {
-    content: "";
-    display: block;
-    border-bottom: 3px solid #f8da3c;
-    width: 50%;
-    margin: auto;
-    padding-bottom: 5px;
-    margin-bottom: -8px;
+  .nav-restore {
+    transform: translateY(0);
   }
-  .jumbotron {
-    margin-top: -75px;
+  .nav-toggle {
+    display: inherit;
+  }
+  .hero > .hero-container > p {
+    font-size: 13px;
+  }
+  .store > .barcode {
+    width: auto;
   }
 }
