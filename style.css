@@ -498,4 +498,7 @@ center > a:hover {
   .catalog > .list > p {
     font-size: 20px;
   }
+  .my-alert {
+    height: auto;
+  }
 }
