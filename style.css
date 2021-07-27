@@ -307,12 +307,23 @@ center > a:hover {
   width: 100%;
   margin: 0 auto;
 }
-.list > p {
-  font-size: 40px;
+.list > h1 {
+  color: black;
+  padding-top: 10px;
   font-weight: bold;
   text-align: center;
   background-color: #f8da3c;
   font-family: "Teko", sans-serif;
+}
+.list > p {
+  color: white;
+  padding-bottom: 10px;
+  margin-top: -8px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8da3c;
+  font-family: "Montserrat", sans-serif;
 }
 /* GAMING END */
 /* ACCESSORIES START */
@@ -461,16 +472,30 @@ center > a:hover {
     margin: auto;
     padding-bottom: 2px;
     margin-bottom: -4px;
+  }
   .hero {
     background-image: url(./img/christopher-farrugia-2yQtqBqzDRo-unsplash.jpg);
+  }
+  .store {
+    justify-content: center;
   }
   .store > .store-img {
     margin-top: 30px;
   }
-  .store > .barcode {
-    transform: scale(0.9);
+  .store > .barcode > img {
+    width: 80%;
   }
   .contact {
     margin: 0 50px;
+  }
+  .catalog {
+    justify-content: center;
+  }
+  .catalog > .list {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .catalog > .list > p {
+    font-size: 20px;
   }
 }
